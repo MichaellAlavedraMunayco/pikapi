@@ -1,4 +1,10 @@
+<!--
+Created: Sat Jun 11 2022 14:58:50 GMT-0400 (hora de Bolivia)
+Modified: Sat Jun 11 2022 14:58:50 GMT-0400 (hora de Bolivia)
+-->
+
 # Pikapi
+
 An open RESTful API for simple Pokémon data
 
 ## Data Model
@@ -11,7 +17,7 @@ classDiagram
 class Data {
   <<interface>>
   string id
-  string name  
+  string name
   string specie
   List~Type~ types
   string description
@@ -21,8 +27,8 @@ class Data {
   List~Movement~ movements
   Stat stat
   Evolution evolution
-  List~Animation~ animations
-  List~Voice~ voices
+  List~Media~ animations
+  List~Media~ voices
 }
 
 class Type {
@@ -47,13 +53,29 @@ class Type {
   Fairy
 }
 
-class Animation {
+class Movement {
   <<interface>>
-  string url
-  Status status
+  string name
+  number damage
+  Type type
 }
 
-class Voice {
+class Stat {
+  <<interface>>
+  number health
+  number attack
+  number defense
+  number resistence
+  number speed
+}
+
+class Evolution {
+  <<interface>>
+  List~string~ from
+  List~string~ to
+}
+
+class Media {
   <<interface>>
   string url
   Status status
@@ -66,44 +88,21 @@ class Status {
   Roaring
 }
 
-class Stat {
-  <<interface>>
-  number health
-  number attack
-  number defense
-  number resistence  
-  number speed
-}
-
-class Movement {
-  <<interface>>
-  List~string~ basics
-  List~string~ specials
-}
-
-class Evolution {
-  <<interface>>
-  List~string~ from
-  List~string~ to
-}
-
 
 Data <-- Type
-Data o-- Animation
-Data o-- Voice
+Data o-- Media
 Data *-- Stat
 Data *-- Movement
-Data *-- Voice
 Data *-- Evolution
-
-Animation <-- Status
-Voice <-- Status
+Movement <-- Type
+Media <-- Status
 
 ```
 
 ## References
 
-- [https://www.pkparaiso.com/pokedex/bulbasaur.php](https://www.pkparaiso.com/pokedex/bulbasaur.php)
-- [https://www.pokemon.com/es/pokedex/bulbasaur](https://www.pokemon.com/es/pokedex/bulbasaur)
-- [https://pokemon.fandom.com/es/wiki/Bulbasaur](https://pokemon.fandom.com/es/wiki/Bulbasaur)
-- [https://pokemon.fandom.com/wiki/Bulbasaur](https://pokemon.fandom.com/wiki/Bulbasaur)
+* [https://www.pkparaiso.com/pokedex/bulbasaur.php](https://www.pkparaiso.com/pokedex/bulbasaur.php)
+* [https://www.pokemon.com/es/pokedex/bulbasaur](https://www.pokemon.com/es/pokedex/bulbasaur)
+* [https://pokemon.fandom.com/es/wiki/Bulbasaur](https://pokemon.fandom.com/es/wiki/Bulbasaur)
+* [https://pokemon.fandom.com/wiki/Bulbasaur](https://pokemon.fandom.com/wiki/Bulbasaur)
+* [https://pokemon.gameinfo.io/en/pokemon/1-bulbasaur](https://pokemon.gameinfo.io/en/pokemon/1-bulbasaur)
