@@ -88,7 +88,6 @@ class Status {
   Roaring
 }
 
-
 Data <-- Type
 Data o-- Media
 Data *-- Stat

@@ -1,4 +1,6 @@
-const pokemons: Pokemon.Pokemon[] = [
+import { Pokemon } from './interfaces';
+
+export const pokemons: Pokemon.Pokemon[] = [
 	{
 		id: '001',
 		name: 'Bulbasaur',
@@ -8,7 +10,7 @@ const pokemons: Pokemon.Pokemon[] = [
 		weight: '15.2',
 		height: '0.7',
 		counters: [Pokemon.Type.Fire, Pokemon.Type.Psychic, Pokemon.Type.Flying, Pokemon.Type.Ice,],
-		movements: [
+		moves: [
 			{ name: 'Vine Whip', damage: 7, type: Pokemon.Type.Grass },
 			{ name: 'Tackle', damage: 5, type: Pokemon.Type.Normal },
 			{ name: 'Seed Bomb', damage: 55, type: Pokemon.Type.Normal },
@@ -47,7 +49,7 @@ const pokemons: Pokemon.Pokemon[] = [
 		weight: '13.0',
 		height: '1.0',
 		counters: [Pokemon.Type.Fire, Pokemon.Type.Psychic, Pokemon.Type.Flying, Pokemon.Type.Ice,],
-		movements: [
+		moves: [
 			{ name: 'Vine Whip', damage: 7, type: Pokemon.Type.Normal },
 			{ name: 'Razor Leaf', damage: 13, type: Pokemon.Type.Normal },
 			{ name: 'Sludge Bomb', damage: 80, type: Pokemon.Type.Poison },

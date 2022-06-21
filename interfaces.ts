@@ -1,4 +1,4 @@
-namespace Pokemon {
+export namespace Pokemon {
 
 	export interface Pokemon {
 		id: string;
@@ -9,7 +9,7 @@ namespace Pokemon {
 		weight: string
 		height: string
 		counters: Type[]
-		movements: Movement[];
+		moves: Move[];
 		stat: Stat;
 		evolution: Evolution;
 		animations: Media[];
@@ -37,7 +37,7 @@ namespace Pokemon {
 		Fairy = 'Fairy',
 	}
 
-	export interface Movement {
+	export interface Move {
 		name: string;
 		damage: number;
 		type: Type;
